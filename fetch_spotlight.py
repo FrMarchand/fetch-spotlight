@@ -46,7 +46,7 @@ def fetch_spotlight():
 	for fileName in os.listdir(sourceFolder):
 		filePath = os.path.join(sourceFolder, fileName)
 		root, ext = os.path.splitext(filePath)
-		if ext is '' and fileName not in destFileNames:
+		if ext == '' and fileName not in destFileNames:
 			width, height = get_image_size(filePath)
 			if width >= minImageWidth and height >=minImageHeight:
 				shutil.copy(filePath, destFolder)
